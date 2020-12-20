@@ -18,12 +18,16 @@ export default {
 };
 </script>
 <style>
+body{
+  background-color: rgb(252, 252, 254);
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  background-color: inherit;
 }
 .view{
   min-height: 85vh;
@@ -68,7 +72,7 @@ footer a {
   text-decoration: none;
 }
 .green-link {
-  color: rgb(0, 150, 75);
+  color: #025c2f;
   font-weight: 600;
   text-decoration: none;
 }

@@ -1,16 +1,16 @@
 <template>
   <div class="wish">
-    <form action="" method="get" v-on:submit.prevent>
+    <form action="" method="get" v-on:submit.prevent="showIcons" >
       <h1>Fill and submit to send a wish</h1>
       <label for="name">Your name: </label>
       <input type="text" name="name" id="name" />
-      <label for="message">Your message: </label>
-      <textarea name="message" id="message" cols="25" rows="10"></textarea>
-      <button type="submit">Share</button>
+      <label for="message" v-if="!$route.query.create==='xmas'">Your message: </label>
+      <textarea v-if="!$route.query.create==='xmas'" name="message" id="message" cols="25" rows="10"></textarea>
+      <button type="submit" id="shareButton">Share</button>
     </form>
-      <Share v-if="displayShare" style="display: block;"></Share>
+      <Share id="share"></Share>
   </div>
-</template>
+</template> 
 
 <script>
 import Share from "../components/Share.vue";
@@ -19,11 +19,15 @@ export default {
   components: {
     Share,
   },
-  data() {
-    return {
-      displayShare: false,
-    };
+  methods:{
+    showIcons: function(){
+      let s = document.querySelector('#share');
+      s.style = 'display: block;';
+    }
   },
+  mounted(){
+    console.log(document.referrer)
+  }
 };
 </script>
 
