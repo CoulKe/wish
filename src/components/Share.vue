@@ -46,8 +46,8 @@ export default {
       }`;
     },
     whatsapp: function () {
-      return `whatsapp://send?text=Check this out https://letswish.netlify.app/x?n=${
-        this.name + "" || "Mysterious person"
+      return `whatsapp://send?text=Check%20this%20out%20https://letswish.netlify.app/x?n=${
+        this.name + "" || "Mysterious%20person"
       }`;
     },
   },
