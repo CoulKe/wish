@@ -35,11 +35,12 @@ body{
 .intro {
   font-family: cursive;
   text-align: center;
+  color: #000;
   background-color: #00ffff;
   margin: 0;
 }
 #nav {
-  background-color: #505050;
+  background-color: #000000;
   padding: 20px;
   margin-bottom: 30px;
 }
