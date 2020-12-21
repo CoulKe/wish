@@ -3,12 +3,12 @@
     <form action="" method="get" v-on:submit.prevent="showIcons" >
       <h1>Fill and submit to send a wish</h1>
       <label for="name">Your name: </label>
-      <input type="text" name="name" id="name" />
+      <input type="text" name="name" id="name" v-model="name" />
       <label for="message" v-if="!$route.query.create==='xmas'">Your message: </label>
       <textarea v-if="!$route.query.create==='xmas'" name="message" id="message" cols="25" rows="10"></textarea>
       <button type="submit" id="shareButton">Share</button>
     </form>
-      <Share id="share"></Share>
+      <Share id="share" :name="name"></Share>
   </div>
 </template> 
 
@@ -16,6 +16,11 @@
 import Share from "../components/Share.vue";
 export default {
   name: "Wish",
+  data(){
+    return{
+      name: '',
+    }
+  },
   components: {
     Share,
   },

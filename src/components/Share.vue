@@ -1,5 +1,5 @@
 <template>
-  <div class="share_wrapper" >
+  <div class="share_wrapper">
     <img
       src="../assets/icons/cancel.png"
       alt="cancel"
@@ -9,12 +9,16 @@
     <h1>Share through</h1>
     <div class="share_icons">
       <div class="social_icon">
-        <img src="../assets/icons/whatsapp.png" alt="Whatsapp logo" />
-        <p><a href="whatsapp://send?text=">Whatsapp</a></p>
+        <a :href="whatsapp">
+          <img src="../assets/icons/whatsapp.png" alt="Whatsapp logo" />
+          <p>Whatsapp</p>
+        </a>
       </div>
       <div class="social_icon">
-        <img src="../assets/icons/facebook.png" alt="Facebook logo" />
-        <p><a href="">Facebook</a></p>
+        <a :href="facebook">
+          <img src="../assets/icons/facebook.png" alt="Facebook logo" />
+          <p>Facebook</p>
+        </a>
       </div>
     </div>
     <!-- share_icons -->
@@ -24,11 +28,27 @@
 
 <script>
 export default {
-  name: "Share",
- 
+  props: {
+    name: {
+      type: String,
+      default: "Mysterious person",
+    },
+  },
   methods: {
     cancelMenu: function ($event) {
-      $event.target.parentElement.style="display: none;"
+      $event.target.parentElement.style = "display: none;";
+    },
+  },
+  computed: {
+    facebook: function () {
+      return `https://www.facebook.com/share.php?u=https://letswish.netlify.app/x?n= ${
+        this.name + "" || "Mysterious person"
+      }`;
+    },
+    whatsapp: function () {
+      return `whatsapp://send?text=Check this out https://letswish.netlify.app/x?n=${
+        this.name + "" || "Mysterious person"
+      }`;
     },
   },
 };
@@ -39,7 +59,7 @@ export default {
   cursor: pointer;
   margin-top: 14px;
 }
-a{
+a {
   text-decoration: none;
 }
 .share_wrapper {
