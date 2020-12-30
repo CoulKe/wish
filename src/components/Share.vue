@@ -33,20 +33,27 @@ export default {
       type: String,
       default: "Mysterious person",
     },
+    templateValue: {
+      type: String,
+    }
   },
   methods: {
+    /**
+     * Hides the menu
+     * @param $event event object
+     */
     cancelMenu: function ($event) {
       $event.target.parentElement.style = "display: none;";
     },
   },
   computed: {
     facebook: function () {
-      return `https://www.facebook.com/share.php?u=https://letswish.netlify.app/x?n= ${
+      return `https://www.facebook.com/share.php?u=https://letswish.netlify.app/${this.templateValue}?n= ${
         this.name + "" || "Mysterious person"
       }`;
     },
     whatsapp: function () {
-      return `whatsapp://send?text=Check%20this%20out%20https://letswish.netlify.app/x?n=${
+      return `whatsapp://send?text=Check%20this%20out%20https://letswish.netlify.app/${this.templateValue}?n=${
         this.name + "" || "Mysterious%20person"
       }`;
     },

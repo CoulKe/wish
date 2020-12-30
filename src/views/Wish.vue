@@ -1,14 +1,22 @@
 <template>
   <div class="wish">
-    <form action="" method="get" v-on:submit.prevent="showIcons" >
+    <form action="" method="get" v-on:submit.prevent="showIcons">
       <h1>Fill and submit to send a wish</h1>
-      <label for="name">Your name: </label>
-      <input type="text" name="name" id="name" v-model="name" />
-      <label for="message" v-if="!$route.query.create==='xmas'">Your message: </label>
-      <textarea v-if="!$route.query.create==='xmas'" name="message" id="message" cols="25" rows="10"></textarea>
+      <label for="template">Choose template:</label>
+      <select name="template" id="template" @click="toggleDisplay($event)">
+        <option value="">--Select--</option>
+        <option value="x">Christmas</option>
+        <option value="y">New year</option>
+        <option value="b">Birthday</option>
+      </select>
+      <label for="name" v-if="templateValue !== ''">{{ placeLabel }} </label>
+      <input type="text" v-if="templateValue !== ''" name="name" id="name" v-model="name" />
+      <label for="message" v-if="templateValue === 'custom'"
+        >Your message:
+      </label>
       <button type="submit" id="shareButton">Share</button>
     </form>
-      <Share id="share" :name="name"></Share>
+    <Share id="share" :name="name" :templateValue="templateValue"></Share>
   </div>
 </template> 
 
@@ -16,23 +24,49 @@
 import Share from "../components/Share.vue";
 export default {
   name: "Wish",
-  data(){
-    return{
-      name: '',
-    }
+  data() {
+    return {
+      name: "",
+      templateValue: "",
+    };
   },
   components: {
     Share,
   },
-  methods:{
-    showIcons: function(){
-      let s = document.querySelector('#share');
-      s.style = 'display: block;';
-    }
+  methods: {
+    showIcons: function () {
+      if (this.templateValue === "") {
+        alert('Choose a template');
+      }
+      else if(this.name === ''){
+        alert('Fill your name');
+      }
+      else{
+        let s = document.querySelector("#share");
+        s.style = "display: block;";
+      }
+    },
+    /**
+     * Hides name field if template is empty
+     * @param $event Event object
+     * @return void
+     */
+    toggleDisplay: function ($event) {
+      this.templateValue = $event.target.value;
+    },
   },
-  mounted(){
-    console.log(document.referrer)
-  }
+  computed: {
+    /**
+     * Dynamically inserts label by checking templateValue
+     */
+    placeLabel: function () {
+      if (this.templateValue === "b") {
+        return "Friend's name";
+      } else {
+        return "Your name";
+      }
+    },
+  },
 };
 </script>
 

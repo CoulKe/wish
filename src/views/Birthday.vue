@@ -1,27 +1,27 @@
 <template>
   <h1 id="color_message">
-    <span style="color: green">m</span>
-    <span style="color: purple">e</span>
-    <span style="color: red">r</span>
-    <span style="color: blue">r</span>
+    <span style="color: green">h</span>
+    <span style="color: purple">a</span>
+    <span style="color: red">p</span>
+    <span style="color: blue">p</span>
     <span style="color: green">y</span>
     <br />
-    <span style="color: teal">c</span>
-    <span style="color: purple">h</span>
+    <span style="color: teal">b</span>
+    <span style="color: purple">i</span>
     <span style="color: #2C3E50">r</span>
-    <span style="color: green">i</span>
-    <span style="color: blue">s</span>
-    <span style="color: teal">t</span>
-    <span style="color: #2C3E50">m</span>
-    <span style="color: #000">a</span>
-    <span style="color: green">s</span>
+    <span style="color: green">t</span>
+    <span style="color: blue">h</span>
+    <span style="color: teal">d</span>
+    <span style="color: #2C3E50">a</span>
+    <span style="color: #000">y</span>
+    <br>
   </h1>
+  <h1 style="text-align: center;">{{ $route.query.n || "Mysterious person" }}</h1>
   <p>
     May your days be filled with joy and be favoured by the universe during
     these period
   </p>
   <canvas id="my-canvas"></canvas>
-  <p>From {{ $route.query.n || "Mysterious person" }}</p>
   <button>
     <router-link to="/wish">Click here to create yours</router-link>
   </button>
