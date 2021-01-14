@@ -5,6 +5,10 @@
     friends.
   </p>
   <p>Currently, it only shares Christmas, New year and Birthday messages</p>
+  <h2>Examples</h2>
+  <p>Christmas wish <a href="https://letswish.netlify.app/x?n=coul">here</a></p>
+  <p>New year wish <a href="https://letswish.netlify.app/y?n=coul">here</a></p>
+  <p>Birthday wish <a href="https://letswish.netlify.app/b?n=coul">here</a></p>
   <p>
     Click <a href="/wish" class="green-link">here</a> to share a wish with
     someone special.
