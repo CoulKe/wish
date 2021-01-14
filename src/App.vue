@@ -18,6 +18,7 @@ export default {
 };
 </script>
 <style>
+@import './assets/css/base.css';
 body{
   background-color: rgb(252, 252, 254);
 }
