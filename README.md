@@ -4,7 +4,8 @@
 This project is made purposely for sending christmas, new year and birthday wishes digitally with your friends.
 [Go to the Support Web Site to see it live](http://letswish.netlify.app/).
 
-You can fork it and follow the setup below to launch it if you want.
+## Demo
+![Letswish gif demo](demo.gif)
 
 ## Project setup
 ```
