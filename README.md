@@ -7,9 +7,9 @@ This project is made purposely for sending christmas, new year and birthday wish
 ## Demo
 ![Letswish gif demo](demo.gif)
 ### Live demo
-[Christmas wish](https://letswish.netlify.app/x?n=coul)
-[New year wish](https://letswish.netlify.app/y?n=coul)
-[Birthday wish](https://letswish.netlify.app/b?n=coul)
+[Christmas wish](https://letswish.netlify.app/x?n=coul) <br/>
+[New year wish](https://letswish.netlify.app/y?n=coul) <br />
+[Birthday wish](https://letswish.netlify.app/b?n=coul) <br />
 ## Project setup
 ```
 npm install
